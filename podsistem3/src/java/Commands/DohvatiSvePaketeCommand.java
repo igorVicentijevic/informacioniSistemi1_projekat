@@ -7,7 +7,9 @@ package Commands;
 
 import Database.DatabaseHandler;
 import SharedLibrary.Return;
+import SharedLibraryPodsistem3.PaketDTO;
 import entities.Paket;
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -19,7 +21,10 @@ public class DohvatiSvePaketeCommand extends Command{
     @Override
     public Return obradiKomandu(Object receivedObject) {
         List<Paket> paketi = new DatabaseHandler().dohvatiSvePakete();
-        Return r = new Return("dohvatiSvePakete",paketi);
+        List<PaketDTO> paketiDTO = new ArrayList<>();
+        for(Paket p: paketi)
+            paketiDTO.add(p.convertToDTO());
+        Return r = new Return("dohvatiSvePakete",paketiDTO);
         return r;
     }
     

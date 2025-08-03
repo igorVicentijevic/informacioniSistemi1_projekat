@@ -25,10 +25,12 @@ public class DohvatiKategorijeZaSnimakCommand extends Command{
         
         List<Kategorija> kategorije = DatabaseHandler.getInstance().dohvatiKategorijeZaAudioSnimak(audioSnimakDTO);
         List<KategorijaDTO> kategorijeDTO = new ArrayList<>();
-        
-        for(Kategorija k: kategorije){
-            kategorijeDTO.add(k.convertToDTO());
-        }
+
+            
+        if(kategorije != null)
+            for(Kategorija k: kategorije){
+                kategorijeDTO.add(k.convertToDTO());
+            }
         
         Return r = new Return("dohvatiKategorijeZaAudioSnimak",kategorijeDTO);
         return r;

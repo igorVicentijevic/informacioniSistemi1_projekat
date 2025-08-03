@@ -8,7 +8,7 @@ import javax.persistence.metamodel.ListAttribute;
 import javax.persistence.metamodel.SingularAttribute;
 import javax.persistence.metamodel.StaticMetamodel;
 
-@Generated(value="EclipseLink-2.5.2.v20140319-rNA", date="2025-07-25T15:56:22")
+@Generated(value="EclipseLink-2.5.2.v20140319-rNA", date="2025-08-03T19:26:23")
 @StaticMetamodel(Snimak.class)
 public class Snimak_ { 
 

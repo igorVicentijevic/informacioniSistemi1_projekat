@@ -55,15 +55,19 @@ public class MessageReceiver extends Thread{
         JMSContext context = Main.connFactory.createContext();
         JMSConsumer consumer = context.createConsumer(Main.podsistem1Q);
         
-        consumer.setMessageListener(new MessageListener(){
-             @Override
-             public void onMessage(Message message) {
-                  handleMessageReceived(message);
-             }
-
-        });
-        
-        while(true);
+        while(true){
+            Message msg = consumer.receive();
+            handleMessageReceived(msg);
+        }
+//        consumer.setMessageListener(new MessageListener(){
+//             @Override
+//             public void onMessage(Message message) {
+//                  handleMessageReceived(message);
+//             }
+//
+//        });
+//        
+//        while(true);
     }
     
     private boolean flush = false;
