@@ -6,30 +6,11 @@
 package podsistem1;
 
 import Database.DatabaseHandler;
-import Entiteti.Korisnik;
-import Entiteti.Mesto;
-import SharedLibrary.KorisnikDTO;
-import SharedLibrary.MestoDTO;
 import Syncronization.DatabaseChangeListener;
 import Syncronization.SyncronizeReceiver;
-import java.util.LinkedList;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import javax.annotation.Resource;
 import javax.jms.ConnectionFactory;
-import javax.jms.JMSConsumer;
-import javax.jms.JMSContext;
-import javax.jms.JMSException;
-import javax.jms.Message;
-import javax.jms.MessageListener;
-import javax.jms.ObjectMessage;
-import javax.jms.Queue;
-import javax.jms.TextMessage;
 import javax.jms.Topic;
-import javax.persistence.EntityManager;
-import javax.persistence.EntityManagerFactory;
-import javax.persistence.Persistence;
-import javax.persistence.RollbackException;
 
 /**
  *
