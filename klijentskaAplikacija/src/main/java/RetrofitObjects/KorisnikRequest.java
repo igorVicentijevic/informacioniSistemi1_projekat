@@ -23,21 +23,21 @@ import retrofit2.http.Path;
  */
 public interface KorisnikRequest {
     @POST("korisnik")
-    public Call<Void> kreirajKorisnika(@Body KorisnikDTO korisnik);
+    public Call<ResponseBody> kreirajKorisnika(@Body KorisnikDTO korisnik);
     
     
     @POST("korisnik/omiljeni/{idK}/{idSni}")
-    public Call<Void> dodajSnimakUOmiljene(@Path("idK") int idK, @Path("idSni") int idSni);
+    public Call<ResponseBody> dodajSnimakUOmiljene(@Path("idK") int idK, @Path("idSni") int idSni);
 
     
     @PUT("korisnik/email/{idK}/{newEmail}")
-    public Call<Void> promeniEmail(@Path("idK") int idK,@Path("newEmail") String newEmail);
+    public Call<ResponseBody> promeniEmail(@Path("idK") int idK,@Path("newEmail") String newEmail);
     
     @GET("korisnik/omiljeni/{idK}")
     public Call<List<AudioSnimakDTO>> dohvatiOmiljeneZaKorisnika(@Path("idK") int idK);
     
     @PUT("korisnik/mesto/{idK}/{naziv}")
-    public Call<Void> promeniMesto(@Path("idK") int idK,@Path("naziv") String naziv);
+    public Call<ResponseBody> promeniMesto(@Path("idK") int idK,@Path("naziv") String naziv);
     
     @GET("korisnik")
     public Call<KorisniciResponse> dohvatiSveKorisnike();

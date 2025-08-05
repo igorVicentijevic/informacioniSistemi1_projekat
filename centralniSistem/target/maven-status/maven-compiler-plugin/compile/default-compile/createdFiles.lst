@@ -1,7 +1,7 @@
 SharedLibrary/Return.class
-endpoints/KorisnikEP$1.class
-endpoints/PaketEP.class
 endpoints/AudioSnimakEP.class
+endpoints/PaketEP.class
+endpoints/KorisnikEP$1.class
 SharedLibrary/RequestDTO.class
 AdditionalComponents/ResponseHandler$1.class
 endpoints/KategorijaEP.class

@@ -1,22 +1,22 @@
-/Volumes/Ledara/ProjektiZaFaks/IS1Projekat/projekat/centralniSistem/src/main/java/endpoints/PretplataEP.java
-/Volumes/Ledara/ProjektiZaFaks/IS1Projekat/projekat/centralniSistem/src/main/java/SharedLibraryPodsistem2/AudioSnimakDTO.java
-/Volumes/Ledara/ProjektiZaFaks/IS1Projekat/projekat/centralniSistem/src/main/java/SharedLibraryPodsistem3/SlusaDTO.java
-/Volumes/Ledara/ProjektiZaFaks/IS1Projekat/projekat/centralniSistem/src/main/java/endpoints/OcenaEP.java
-/Volumes/Ledara/ProjektiZaFaks/IS1Projekat/projekat/centralniSistem/src/main/java/endpoints/KorisnikEP.java
-/Volumes/Ledara/ProjektiZaFaks/IS1Projekat/projekat/centralniSistem/src/main/java/endpoints/MestoEP.java
-/Volumes/Ledara/ProjektiZaFaks/IS1Projekat/projekat/centralniSistem/src/main/java/SharedLibrary/MestoDTO.java
-/Volumes/Ledara/ProjektiZaFaks/IS1Projekat/projekat/centralniSistem/src/main/java/SharedLibrary/Return.java
-/Volumes/Ledara/ProjektiZaFaks/IS1Projekat/projekat/centralniSistem/src/main/java/SharedLibraryPodsistem3/OcenaDTO.java
-/Volumes/Ledara/ProjektiZaFaks/IS1Projekat/projekat/centralniSistem/src/main/java/SharedLibrary/RequestDTO.java
-/Volumes/Ledara/ProjektiZaFaks/IS1Projekat/projekat/centralniSistem/src/main/java/com/mycompany/centralnisistem/JAXRSConfiguration.java
-/Volumes/Ledara/ProjektiZaFaks/IS1Projekat/projekat/centralniSistem/src/main/java/SharedLibrary/KategorijaDTO.java
-/Volumes/Ledara/ProjektiZaFaks/IS1Projekat/projekat/centralniSistem/src/main/java/SharedLibraryPodsistem3/PaketDTO.java
-/Volumes/Ledara/ProjektiZaFaks/IS1Projekat/projekat/centralniSistem/src/main/java/SharedLibraryPodsistem3/PretplataDTO.java
-/Volumes/Ledara/ProjektiZaFaks/IS1Projekat/projekat/centralniSistem/src/main/java/endpoints/PaketEP.java
-/Volumes/Ledara/ProjektiZaFaks/IS1Projekat/projekat/centralniSistem/src/main/java/endpoints/AudioSnimakEP.java
-/Volumes/Ledara/ProjektiZaFaks/IS1Projekat/projekat/centralniSistem/src/main/java/com/mycompany/centralnisistem/resources/JavaEE8Resource.java
-/Volumes/Ledara/ProjektiZaFaks/IS1Projekat/projekat/centralniSistem/src/main/java/SharedLibrary/KorisnikDTO.java
-/Volumes/Ledara/ProjektiZaFaks/IS1Projekat/projekat/centralniSistem/src/main/java/SharedLibraryPodsistem2/KategorijaDTO.java
-/Volumes/Ledara/ProjektiZaFaks/IS1Projekat/projekat/centralniSistem/src/main/java/endpoints/KategorijaEP.java
-/Volumes/Ledara/ProjektiZaFaks/IS1Projekat/projekat/centralniSistem/src/main/java/AdditionalComponents/RequestSender.java
-/Volumes/Ledara/ProjektiZaFaks/IS1Projekat/projekat/centralniSistem/src/main/java/AdditionalComponents/ResponseHandler.java
+/Users/igor/Desktop/Faks 3. godina/IS1/IS1Projekat/projekat/centralniSistem/src/main/java/AdditionalComponents/ResponseHandler.java
+/Users/igor/Desktop/Faks 3. godina/IS1/IS1Projekat/projekat/centralniSistem/src/main/java/SharedLibraryPodsistem3/OcenaDTO.java
+/Users/igor/Desktop/Faks 3. godina/IS1/IS1Projekat/projekat/centralniSistem/src/main/java/SharedLibraryPodsistem3/PretplataDTO.java
+/Users/igor/Desktop/Faks 3. godina/IS1/IS1Projekat/projekat/centralniSistem/src/main/java/com/mycompany/centralnisistem/JAXRSConfiguration.java
+/Users/igor/Desktop/Faks 3. godina/IS1/IS1Projekat/projekat/centralniSistem/src/main/java/endpoints/KorisnikEP.java
+/Users/igor/Desktop/Faks 3. godina/IS1/IS1Projekat/projekat/centralniSistem/src/main/java/SharedLibraryPodsistem3/SlusaDTO.java
+/Users/igor/Desktop/Faks 3. godina/IS1/IS1Projekat/projekat/centralniSistem/src/main/java/SharedLibrary/KorisnikDTO.java
+/Users/igor/Desktop/Faks 3. godina/IS1/IS1Projekat/projekat/centralniSistem/src/main/java/endpoints/AudioSnimakEP.java
+/Users/igor/Desktop/Faks 3. godina/IS1/IS1Projekat/projekat/centralniSistem/src/main/java/SharedLibrary/MestoDTO.java
+/Users/igor/Desktop/Faks 3. godina/IS1/IS1Projekat/projekat/centralniSistem/src/main/java/SharedLibraryPodsistem2/AudioSnimakDTO.java
+/Users/igor/Desktop/Faks 3. godina/IS1/IS1Projekat/projekat/centralniSistem/src/main/java/SharedLibrary/RequestDTO.java
+/Users/igor/Desktop/Faks 3. godina/IS1/IS1Projekat/projekat/centralniSistem/src/main/java/endpoints/KategorijaEP.java
+/Users/igor/Desktop/Faks 3. godina/IS1/IS1Projekat/projekat/centralniSistem/src/main/java/SharedLibrary/KategorijaDTO.java
+/Users/igor/Desktop/Faks 3. godina/IS1/IS1Projekat/projekat/centralniSistem/src/main/java/endpoints/OcenaEP.java
+/Users/igor/Desktop/Faks 3. godina/IS1/IS1Projekat/projekat/centralniSistem/src/main/java/SharedLibraryPodsistem2/KategorijaDTO.java
+/Users/igor/Desktop/Faks 3. godina/IS1/IS1Projekat/projekat/centralniSistem/src/main/java/endpoints/MestoEP.java
+/Users/igor/Desktop/Faks 3. godina/IS1/IS1Projekat/projekat/centralniSistem/src/main/java/endpoints/PretplataEP.java
+/Users/igor/Desktop/Faks 3. godina/IS1/IS1Projekat/projekat/centralniSistem/src/main/java/SharedLibrary/Return.java
+/Users/igor/Desktop/Faks 3. godina/IS1/IS1Projekat/projekat/centralniSistem/src/main/java/SharedLibraryPodsistem3/PaketDTO.java
+/Users/igor/Desktop/Faks 3. godina/IS1/IS1Projekat/projekat/centralniSistem/src/main/java/com/mycompany/centralnisistem/resources/JavaEE8Resource.java
+/Users/igor/Desktop/Faks 3. godina/IS1/IS1Projekat/projekat/centralniSistem/src/main/java/endpoints/PaketEP.java
+/Users/igor/Desktop/Faks 3. godina/IS1/IS1Projekat/projekat/centralniSistem/src/main/java/AdditionalComponents/RequestSender.java

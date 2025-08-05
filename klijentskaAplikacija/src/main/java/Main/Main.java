@@ -5,6 +5,7 @@
  */
 package Main;
 
+import Examples.KreirajKorisnikaExample;
 import ListAccepters.KorisniciResponse;
 import RetrofitObjects.KorisnikRequest;
 import SharedLibrary.KorisnikDTO;
@@ -19,7 +20,7 @@ import retrofit2.Response;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 import retrofit2.converter.jaxb.JaxbConverterFactory;
-
+import Examples.*;
 
 /**
  *
@@ -36,30 +37,24 @@ public class Main {
             .addConverterFactory(JaxbConverterFactory.create())
             .build();
         
-         KorisnikRequest korisnikRequest = retrofit.create(KorisnikRequest.class);
-//        
-     //    Call<KorisniciResponse> korisnikCall = korisnikRequest.dohvatiSveKorisnike();
-     KorisnikDTO toCreate = new KorisnikDTO();
-     toCreate.email = "jasam@jasam";
-     toCreate.godiste=2001;
-     toCreate.ime = "Nisam";
-     toCreate.pol = "M";
-        MestoDTO mesto = new MestoDTO();
-        mesto.naziv = "Bor";
-     toCreate.mesto = mesto;
-     
-        Call<Void> kreirajKorisnikaCall = korisnikRequest.kreirajKorisnika(toCreate);
-        
-        
-        try {
-            Response<Void> response = kreirajKorisnikaCall.execute();
-            System.out.println(response.body().toString());
+//       Example example = new KreirajKorisnikaExample(retrofit);
+//       example.demonstrate();
+
+//         Example example = new DohvatiKorisnikeExample(retrofit);
+//         example.demonstrate();
+//
+//        Example example = new KreirajGradExample(retrofit);
+//        example.demonstrate();
+//
+//          Example example = new PromenaEmailZaKorisnikaExample(retrofit);
+//          example.demonstrate();
+
+//          Example example = new PromenaMestaZaKorisnikaExample(retrofit);
+//          example.demonstrate();
             
-        } catch (IOException ex) {
-            Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
-        } catch (Exception ex) {
-            Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
-        }
+            Example example = new DohvatiMestaExample(retrofit);
+            example.demonstrate();
+       
     }
     
    
