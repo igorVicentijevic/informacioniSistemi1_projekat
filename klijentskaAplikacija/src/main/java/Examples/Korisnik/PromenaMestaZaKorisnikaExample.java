@@ -3,13 +3,11 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package Examples;
+package Examples.Korisnik;
 
+import Examples.Example;
 import Main.Main;
 import RetrofitObjects.KorisnikRequest;
-import RetrofitObjects.MestoRequest;
-import SharedLibrary.KorisnikDTO;
-import SharedLibrary.MestoDTO;
 import java.io.IOException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -22,27 +20,23 @@ import retrofit2.Retrofit;
  *
  * @author igor
  */
-public class KreirajGradExample extends Example {
+public class PromenaMestaZaKorisnikaExample extends Example{
 
-    public KreirajGradExample(Retrofit retrofit) {
-        super(retrofit,"kreirajGrad");
+    public PromenaMestaZaKorisnikaExample(Retrofit retrofit) {
+        super(retrofit,"PromenaMestaZaKorisnika");
     }
-    private MestoDTO createMestoDTO(){
-        MestoDTO mestoDTO = new MestoDTO();
-        mestoDTO.naziv = "Moskva";
-        return mestoDTO;
-    }   
-    
+
     @Override
     public void exampleLogic() {
-        MestoRequest mestoRequest = this.retrofit.create(MestoRequest.class);
+        KorisnikRequest korisnikRequest = this.retrofit.create(KorisnikRequest.class);
 
-        MestoDTO toCreate = createMestoDTO();
-        Call<ResponseBody> kreirajMestoCall = mestoRequest.kreirajGrad(toCreate);
+        //KorisnikDTO toChangeEmail = createNewEmailKorisnikDTO();
+              
+        Call<ResponseBody> promeniMestoKorisnikaCall = korisnikRequest.promeniMesto(12, "Jagodina");
         
          
         try {
-            Response<ResponseBody> response = kreirajMestoCall.execute();
+            Response<ResponseBody> response =promeniMestoKorisnikaCall.execute();
             System.out.println("Status: "+response.code());
             if(response.body()!= null)
                 System.out.println(response.body().string());

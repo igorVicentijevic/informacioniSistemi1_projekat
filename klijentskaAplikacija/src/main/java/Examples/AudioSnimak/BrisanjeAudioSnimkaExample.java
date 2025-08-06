@@ -3,10 +3,9 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package Examples;
+package Examples.AudioSnimak;
 
-import Main.Main;
-import RetrofitObjects.KorisnikRequest;
+import RetrofitObjects.AudioSnimakRequest;
 import java.io.IOException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -19,31 +18,33 @@ import retrofit2.Retrofit;
  *
  * @author igor
  */
-public class PromenaMestaZaKorisnikaExample extends Example{
+public class BrisanjeAudioSnimkaExample extends Examples.Example{
 
-    public PromenaMestaZaKorisnikaExample(Retrofit retrofit) {
-        super(retrofit,"PromenaMestaZaKorisnika");
+    public BrisanjeAudioSnimkaExample(Retrofit retrofit) {
+        super(retrofit,"BrisanjeAudioSnimka");
     }
 
     @Override
     public void exampleLogic() {
-        KorisnikRequest korisnikRequest = this.retrofit.create(KorisnikRequest.class);
+        AudioSnimakRequest audioSnimakRequest = this.retrofit.create(AudioSnimakRequest.class);
 
-        //KorisnikDTO toChangeEmail = createNewEmailKorisnikDTO();
+       
+        int idK = 1;
+        int idSni = 1;
               
-        Call<ResponseBody> promeniMestoKorisnikaCall = korisnikRequest.promeniMesto(12, "Jagodina");
+        Call<ResponseBody> brisanjeAudioSnimkaCall = audioSnimakRequest.izbrisiSnimak(idK, idSni);
         
          
         try {
-            Response<ResponseBody> response =promeniMestoKorisnikaCall.execute();
+            Response<ResponseBody> response =brisanjeAudioSnimkaCall.execute();
             System.out.println("Status: "+response.code());
             if(response.body()!= null)
                 System.out.println(response.body().string());
             
         } catch (IOException ex) {
-            Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(Main.Main.class.getName()).log(Level.SEVERE, null, ex);
         } catch (Exception ex) {
-            Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(Main.Main.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
     

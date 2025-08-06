@@ -3,8 +3,9 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package Examples;
+package Examples.Korisnik;
 
+import Examples.Example;
 import Main.Main;
 import RetrofitObjects.KorisnikRequest;
 import SharedLibrary.KorisnikDTO;
@@ -21,34 +22,35 @@ import retrofit2.Retrofit;
  *
  * @author igor
  */
-public class PromenaEmailZaKorisnikaExample extends Example{
+public class KreirajKorisnikaExample extends Example {
 
-    public PromenaEmailZaKorisnikaExample(Retrofit retrofit) {
-        super(retrofit,"PromenaEmailaZaKorisnika");
+    public KreirajKorisnikaExample(Retrofit retrofit) {
+        super(retrofit,"kreirajKorisnika");
     }
-
-
-//    private KorisnikDTO createNewEmailKorisnikDTO(){
-//            KorisnikDTO toChangeEmail = new KorisnikDTO();
-//            toChangeEmail.idK = 12;
-//            toChangeEmail.email = "jasamGde34@jasam";
-//            
-//            return toChangeEmail;
-//    }
+    
+    private KorisnikDTO createKorisnikDTO(){
+            KorisnikDTO toCreate = new KorisnikDTO();
+            toCreate.email = "jasamGde3@jasam";
+            toCreate.godiste=2001;
+            toCreate.ime = "NisamGde3";
+            toCreate.pol = "M";
+            MestoDTO mesto = new MestoDTO();
+            mesto.naziv = "Bor";
+            toCreate.mesto = mesto;
+            return toCreate;
+    }
     
 
     @Override
     public void exampleLogic() {
-       
         KorisnikRequest korisnikRequest = this.retrofit.create(KorisnikRequest.class);
 
-        //KorisnikDTO toChangeEmail = createNewEmailKorisnikDTO();
-              
-        Call<ResponseBody> promeniEmailKorisnikaCall = korisnikRequest.promeniEmail(12, "jasamde34@jasam");
+        KorisnikDTO toCreate = createKorisnikDTO();
+        Call<ResponseBody> kreirajKorisnikaCall = korisnikRequest.kreirajKorisnika(toCreate);
         
          
         try {
-            Response<ResponseBody> response =promeniEmailKorisnikaCall.execute();
+            Response<ResponseBody> response = kreirajKorisnikaCall.execute();
             System.out.println("Status: "+response.code());
             if(response.body()!= null)
                 System.out.println(response.body().string());

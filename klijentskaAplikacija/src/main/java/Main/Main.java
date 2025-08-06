@@ -5,7 +5,8 @@
  */
 package Main;
 
-import Examples.KreirajKorisnikaExample;
+import Examples.Mesto.DohvatiMestaExample;
+import Examples.Korisnik.KreirajKorisnikaExample;
 import ListAccepters.KorisniciResponse;
 import RetrofitObjects.KorisnikRequest;
 import SharedLibrary.KorisnikDTO;
@@ -37,6 +38,9 @@ public class Main {
             .addConverterFactory(JaxbConverterFactory.create())
             .build();
         
+        //PODSISTEM 1 FUNKCIONALNOSTI
+        
+        
 //       Example example = new KreirajKorisnikaExample(retrofit);
 //       example.demonstrate();
 
@@ -51,6 +55,10 @@ public class Main {
 
 //          Example example = new PromenaMestaZaKorisnikaExample(retrofit);
 //          example.demonstrate();
+
+            
+        //PODSISTEM 2 FUNKCIONALNOSTI
+        
             
             Example example = new DohvatiMestaExample(retrofit);
             example.demonstrate();

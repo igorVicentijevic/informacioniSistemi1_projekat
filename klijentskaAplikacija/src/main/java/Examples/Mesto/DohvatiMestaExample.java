@@ -3,8 +3,9 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package Examples;
+package Examples.Mesto;
 
+import Examples.Example;
 import ListAccepters.KorisniciResponse;
 import ListAccepters.MestaResponse;
 import Main.Main;
