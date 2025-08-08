@@ -5,9 +5,11 @@
  */
 package RetrofitObjects;
 
+import ListAccepters.OceneResponse;
 import SharedLibrary.RequestDTO;
 import SharedLibraryPodsistem3.OcenaDTO;
 import SharedLibraryPodsistem3.SlusaDTO;
+import okhttp3.ResponseBody;
 import retrofit2.Call;
 import retrofit2.http.DELETE;
 import retrofit2.http.GET;
@@ -21,14 +23,14 @@ import retrofit2.http.Path;
  */
 public interface OcenaRequest {
     @POST
-    public Call<Void> dodajOcenu(OcenaDTO ocenaDTO);
+    public Call<ResponseBody> dodajOcenu(OcenaDTO ocenaDTO);
     
     @GET("{idSni}")
-    public Call<OcenaDTO> dohvatiSveOceneZaAudioSnimak(@Path("idSni") int idSni);
+    public Call<OceneResponse> dohvatiSveOceneZaAudioSnimak(@Path("idSni") int idSni);
     
     @PUT
-    public Call<Void> promeniOcenu(OcenaDTO ocenaDTO);
+    public Call<ResponseBody> promeniOcenu(OcenaDTO ocenaDTO);
     
     @DELETE
-    public Call<Void> izbrisiOcenu(OcenaDTO ocenaDTO);
+    public Call<ResponseBody> izbrisiOcenu(OcenaDTO ocenaDTO);
 }

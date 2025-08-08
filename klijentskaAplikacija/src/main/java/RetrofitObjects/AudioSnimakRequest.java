@@ -7,6 +7,7 @@ package RetrofitObjects;
 
 import ListAccepters.AudioSnimciResponse;
 import ListAccepters.KategorijeResponse;
+import ListAccepters.SlusanjaResponse;
 import SharedLibraryPodsistem2.AudioSnimakDTO;
 import SharedLibraryPodsistem2.KategorijaDTO;
 import SharedLibraryPodsistem3.SlusaDTO;
@@ -31,7 +32,7 @@ public interface AudioSnimakRequest {
     
     
     @GET("slusa/{idSni}")
-    public Call<List<SlusaDTO>> dohvatiSvaSlusanjaZaAudioSnimak(@Path("idSni") int idSni);
+    public Call<SlusanjaResponse> dohvatiSvaSlusanjaZaAudioSnimak(@Path("idSni") int idSni);
     
     
     @GET

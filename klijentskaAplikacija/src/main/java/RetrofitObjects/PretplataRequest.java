@@ -5,9 +5,11 @@
  */
 package RetrofitObjects;
 
+import ListAccepters.PretplateResponse;
 import SharedLibrary.RequestDTO;
 import SharedLibraryPodsistem3.PretplataDTO;
 import java.util.List;
+import okhttp3.ResponseBody;
 import retrofit2.Call;
 import retrofit2.http.GET;
 import retrofit2.http.POST;
@@ -20,11 +22,11 @@ import retrofit2.http.Path;
  */
 public interface PretplataRequest {
     @POST
-    public Call<Void> kreirajPretplatu(PretplataDTO pretplataDTO);
+    public Call<ResponseBody> kreirajPretplatu(PretplataDTO pretplataDTO);
     
     @GET("{idK}")
-    public Call<List<PretplataDTO>> dohvatiSvePretplateZaKorisnika(@Path("idK") int idK);
+    public Call<PretplateResponse> dohvatiSvePretplateZaKorisnika(@Path("idK") int idK);
     
     @PUT("mesecneCene/{idPak}")
-    public Call<Void> dodajKategoriju(@Path("idPak") int idPak);
+    public Call<ResponseBody> dodajKategoriju(@Path("idPak") int idPak);
 }

@@ -5,9 +5,11 @@
  */
 package RetrofitObjects;
 
+import ListAccepters.PaketiResponse;
 import SharedLibrary.RequestDTO;
 import SharedLibraryPodsistem3.PaketDTO;
 import java.util.List;
+import okhttp3.ResponseBody;
 import retrofit2.Call;
 import retrofit2.http.GET;
 import retrofit2.http.POST;
@@ -21,10 +23,10 @@ import retrofit2.http.Path;
 public interface PaketRequest {
     
     @GET
-    public Call<List<PaketDTO>> dohvatiSvePakete();
+    public Call<PaketiResponse> dohvatiSvePakete();
     @POST
-    public Call<Void> kreirajPaket(PaketDTO paketDTO);
+    public Call<ResponseBody> kreirajPaket(PaketDTO paketDTO);
     
     @PUT("mesecneCene/{idPak}/{cena}")
-    public Call<Void> promeniCenu(@Path("idPak") int idPak,@Path("cena") float cena);
+    public Call<ResponseBody> promeniCenu(@Path("idPak") int idPak,@Path("cena") float cena);
 }

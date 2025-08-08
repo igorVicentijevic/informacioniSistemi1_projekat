@@ -5,6 +5,7 @@
  */
 package RetrofitObjects;
 
+import ListAccepters.AudioSnimciResponse;
 import ListAccepters.KorisniciResponse;
 import SharedLibrary.KorisnikDTO;
 import SharedLibraryPodsistem2.AudioSnimakDTO;
@@ -34,7 +35,7 @@ public interface KorisnikRequest {
     public Call<ResponseBody> promeniEmail(@Path("idK") int idK,@Path("newEmail") String newEmail);
     
     @GET("korisnik/omiljeni/{idK}")
-    public Call<List<AudioSnimakDTO>> dohvatiOmiljeneZaKorisnika(@Path("idK") int idK);
+    public Call<AudioSnimciResponse> dohvatiOmiljeneZaKorisnika(@Path("idK") int idK);
     
     @PUT("korisnik/mesto/{idK}/{naziv}")
     public Call<ResponseBody> promeniMesto(@Path("idK") int idK,@Path("naziv") String naziv);
