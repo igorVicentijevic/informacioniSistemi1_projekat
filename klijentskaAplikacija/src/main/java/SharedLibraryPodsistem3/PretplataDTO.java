@@ -5,7 +5,9 @@
  */
 package SharedLibraryPodsistem3;
 
+import JSON.CustomDateDeserializer;
 import SharedLibrary.KorisnikDTO;
+import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import java.io.Serializable;
 import java.io.StringWriter;
 import java.util.Date;
@@ -27,8 +29,9 @@ public class PretplataDTO implements Serializable{
     
     public PaketDTO paket;
 
-   
+   @JsonDeserialize(using = CustomDateDeserializer.class)
     public Date datumVremePretplate;
+
     
     public String toXmlString() throws Exception {
         JAXBContext context = JAXBContext.newInstance(this.getClass());

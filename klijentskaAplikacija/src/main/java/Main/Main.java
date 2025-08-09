@@ -23,6 +23,7 @@ import retrofit2.converter.gson.GsonConverterFactory;
 import retrofit2.converter.jaxb.JaxbConverterFactory;
 import Examples.*;
 import Examples.Paket.DohvatiSvePaketeExample;
+import Examples.Pretplata.DohvatiSvePretplateExample;
 import retrofit2.converter.jackson.JacksonConverterFactory;
 import retrofit2.converter.simplexml.SimpleXmlConverterFactory;
 
@@ -67,7 +68,10 @@ public class Main {
 //            Example example = new DohvatiMestaExample(retrofit);
 //            example.demonstrate();
             
-            Example example = new DohvatiSvePaketeExample(retrofit);
+//            Example example = new DohvatiSvePaketeExample(retrofit);
+//            example.demonstrate();
+
+            Example example = new DohvatiSvePretplateExample(retrofit);
             example.demonstrate();
     }
     

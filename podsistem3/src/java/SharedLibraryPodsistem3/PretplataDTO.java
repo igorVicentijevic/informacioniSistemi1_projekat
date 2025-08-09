@@ -24,6 +24,5 @@ public class PretplataDTO implements Serializable{
     
     public PaketDTO paket;
 
-   
     public Date datumVremePretplate;
 }

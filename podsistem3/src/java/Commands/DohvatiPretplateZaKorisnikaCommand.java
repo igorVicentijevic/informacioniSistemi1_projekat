@@ -20,8 +20,8 @@ public class DohvatiPretplateZaKorisnikaCommand extends Command{
 
     @Override
     public Return obradiKomandu(Object receivedObject) {
-        int idK = (int) receivedObject;
-        List<Pretplata> pretplate = new DatabaseHandler().dohvatiPretplateZaKorisnika(idK);
+        PretplataDTO pretplataDTO = (PretplataDTO) receivedObject;
+        List<Pretplata> pretplate = new DatabaseHandler().dohvatiPretplateZaKorisnika(pretplataDTO.korisnik.idK);
         List<PretplataDTO> pretplateDTO = new ArrayList<>();
         for(Pretplata p: pretplate)
             pretplateDTO.add(p.convertToDTO());

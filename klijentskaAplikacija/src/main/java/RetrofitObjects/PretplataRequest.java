@@ -21,12 +21,14 @@ import retrofit2.http.Path;
  * @author igor
  */
 public interface PretplataRequest {
-    @POST
+    @POST("pretplata")
     public Call<ResponseBody> kreirajPretplatu(PretplataDTO pretplataDTO);
     
-    @GET("{idK}")
-    public Call<PretplateResponse> dohvatiSvePretplateZaKorisnika(@Path("idK") int idK);
+//    @GET("{idK}")
+//    public Call<PretplateResponse> dohvatiSvePretplateZaKorisnika(@Path("idK") int idK);
+    @GET("pretplata/{idK}")
+    public Call<List<PretplataDTO>> dohvatiSvePretplateZaKorisnika(@Path("idK") int idK);
     
-    @PUT("mesecneCene/{idPak}")
+    @PUT("pretplata/mesecneCene/{idPak}")
     public Call<ResponseBody> dodajKategoriju(@Path("idPak") int idPak);
 }

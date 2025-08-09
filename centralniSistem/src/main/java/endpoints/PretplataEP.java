@@ -7,6 +7,7 @@ package endpoints;
 
 import AdditionalComponents.RequestSender;
 import AdditionalComponents.ResponseHandler;
+import SharedLibrary.KorisnikDTO;
 import SharedLibrary.RequestDTO;
 import SharedLibraryPodsistem3.PaketDTO;
 import SharedLibraryPodsistem3.PretplataDTO;
@@ -82,10 +83,12 @@ public class PretplataEP {
     @Path("{idK}")
     public Response dohvatiSvePretplateZaKorisnika(@PathParam("idK") int idK){
         PretplataDTO pretplataDTO = new PretplataDTO();
+        pretplataDTO.korisnik = new KorisnikDTO();
+        pretplataDTO.korisnik.idK = idK;
        RequestDTO request = new RequestDTO("dohvatiSvePretplateZaKorisnika", pretplataDTO);
             RequestSender sender = new RequestSender();
             sender.sendRequest(request,podsistem3Q,connFactory);
-            return new <PretplataDTO>ResponseHandler().waitForResponseWithAdditionalData(request, podsistem3Q, connFactory);
+            return new <PaketDTO>ResponseHandler().waitForResponseWithAdditionalData(request, fromPodsistem3Q, connFactory);
     }
     
     @PUT

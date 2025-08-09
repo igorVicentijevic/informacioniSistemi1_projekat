@@ -18,6 +18,7 @@ import java.util.logging.Logger;
 import retrofit2.Call;
 import retrofit2.Response;
 import retrofit2.Retrofit;
+import java.util.List;
 
 /**
  *
@@ -36,16 +37,23 @@ public class DohvatiSvePretplateExample extends Examples.Example {
         int idK = 1;
         
         
-        Call<PretplateResponse> dohvatiPretplateCall = pretplataRequest.dohvatiSvePretplateZaKorisnika(idK);
-        
+       // Call<PretplateResponse> dohvatiPretplateCall = pretplataRequest.dohvatiSvePretplateZaKorisnika(idK);
+        Call<List<PretplataDTO>> dohvatiPretplateCall = pretplataRequest.dohvatiSvePretplateZaKorisnika(idK);
+
         
          
         try {
-            Response<PretplateResponse> response = dohvatiPretplateCall.execute();
+//            Response<PretplateResponse> response = dohvatiPretplateCall.execute();
+//            
+//            System.out.println("Status: "+response.code());
+//            PretplateResponse pretplateResponse = response.body();
+//            for(PretplataDTO p: pretplateResponse.getPretplata())
+//                System.out.println(p.toXmlString());
+            Response<List<PretplataDTO>> response = dohvatiPretplateCall.execute();
             
             System.out.println("Status: "+response.code());
-            PretplateResponse pretplateResponse = response.body();
-            for(PretplataDTO p: pretplateResponse.getPretplata())
+            List<PretplataDTO> pretplate = response.body();
+            for(PretplataDTO p: pretplate)
                 System.out.println(p.toXmlString());
             
         } catch (IOException ex) {
