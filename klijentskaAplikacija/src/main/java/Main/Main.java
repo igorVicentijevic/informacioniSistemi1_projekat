@@ -22,6 +22,9 @@ import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 import retrofit2.converter.jaxb.JaxbConverterFactory;
 import Examples.*;
+import Examples.Paket.DohvatiSvePaketeExample;
+import retrofit2.converter.jackson.JacksonConverterFactory;
+import retrofit2.converter.simplexml.SimpleXmlConverterFactory;
 
 /**
  *
@@ -35,7 +38,8 @@ public class Main {
         new Retrofit.Builder()
             .baseUrl(API_URL)     
             //.addConverterFactory(GsonConverterFactory.create())
-            .addConverterFactory(JaxbConverterFactory.create())
+            .addConverterFactory(JacksonConverterFactory.create()) // JSON
+            .addConverterFactory(SimpleXmlConverterFactory.create()) // XML
             .build();
         
         //PODSISTEM 1 FUNKCIONALNOSTI
@@ -60,9 +64,11 @@ public class Main {
         //PODSISTEM 2 FUNKCIONALNOSTI
         
             
-            Example example = new DohvatiMestaExample(retrofit);
+//            Example example = new DohvatiMestaExample(retrofit);
+//            example.demonstrate();
+            
+            Example example = new DohvatiSvePaketeExample(retrofit);
             example.demonstrate();
-       
     }
     
    

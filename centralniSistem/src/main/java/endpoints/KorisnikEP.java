@@ -218,6 +218,8 @@ public class KorisnikEP {
 
             return Response.status(Response.Status.OK).entity(new GenericEntity<List<KorisnikDTO>>(sviKorisnici){}).build();
         }
+        //return new ResponseHandler().waitForResponseWithAdditionalData(request, fromPodsistem1Q, connFactory);
+        //}
         finally{
             context.close();
             

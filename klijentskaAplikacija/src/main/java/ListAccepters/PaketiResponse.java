@@ -17,7 +17,7 @@ import javax.xml.bind.annotation.XmlRootElement;
  *
  * @author igor
  */
-@XmlRootElement(name = "PaketDTOes")
+@XmlRootElement(name = "paketDTOes")
 @XmlAccessorType(XmlAccessType.FIELD)
 public class PaketiResponse {
 

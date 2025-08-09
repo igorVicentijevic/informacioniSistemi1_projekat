@@ -11,6 +11,7 @@ import SharedLibraryPodsistem3.PaketDTO;
 import java.util.List;
 import okhttp3.ResponseBody;
 import retrofit2.Call;
+import retrofit2.http.Body;
 import retrofit2.http.GET;
 import retrofit2.http.POST;
 import retrofit2.http.PUT;
@@ -22,11 +23,13 @@ import retrofit2.http.Path;
  */
 public interface PaketRequest {
     
-    @GET
-    public Call<PaketiResponse> dohvatiSvePakete();
-    @POST
-    public Call<ResponseBody> kreirajPaket(PaketDTO paketDTO);
+//    @GET("paket")
+//    public Call<PaketiResponse> dohvatiSvePakete();
+    @GET("paket")
+    public Call<List<PaketDTO>> dohvatiSvePakete();
+    @POST("paket")
+    public Call<ResponseBody> kreirajPaket(@Body PaketDTO paketDTO);
     
-    @PUT("mesecneCene/{idPak}/{cena}")
+    @PUT("paket/mesecneCene/{idPak}/{cena}")
     public Call<ResponseBody> promeniCenu(@Path("idPak") int idPak,@Path("cena") float cena);
 }
