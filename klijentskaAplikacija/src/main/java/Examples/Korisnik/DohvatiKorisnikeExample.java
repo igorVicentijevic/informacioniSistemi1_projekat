@@ -16,7 +16,7 @@ import java.util.logging.Logger;
 import retrofit2.Call;
 import retrofit2.Response;
 import retrofit2.Retrofit;
-
+import java.util.List;
 /**
  *
  * @author igor
@@ -31,7 +31,21 @@ public class DohvatiKorisnikeExample extends Example {
     public void exampleLogic() {
         KorisnikRequest korisnikRequest = this.retrofit.create(KorisnikRequest.class);
 
-        
+//        Call<List<KorisnikDTO>> kreirajKorisnikaCall = korisnikRequest.dohvatiSveKorisnike();
+//        
+//         
+//        try {
+//            Response<List<KorisnikDTO>> response = kreirajKorisnikaCall.execute();
+//            System.out.println("Status: "+response.code());
+//            List<KorisnikDTO> korisnici = response.body();
+//            for(KorisnikDTO k: korisnici)
+//                System.out.println(k.toXmlString());
+//            
+//        } catch (IOException ex) {
+//            Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
+//        } catch (Exception ex) {
+//            Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
+//        }
         Call<KorisniciResponse> kreirajKorisnikaCall = korisnikRequest.dohvatiSveKorisnike();
         
          

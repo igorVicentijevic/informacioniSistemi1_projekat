@@ -23,8 +23,9 @@ public class DohvatiSvaSlusanjaZaAudioSnimakCommand extends Command {
         int idSni = (int) receivedObject;
         List<Slusa> slusanja = new DatabaseHandler().dohvatiSvaSlusanjaZaAudioSnimak(idSni);
         List<SlusaDTO> slusanjaDTO = new ArrayList<>();
-        for(Slusa s: slusanja)
-            slusanjaDTO.add(s.convertToDTO());
+        if(slusanja!= null)
+            for(Slusa s: slusanja)
+                slusanjaDTO.add(s.convertToDTO());
             
         Return r = new Return("dohvatiSvaSlusanjaZaAudioSnimak", slusanjaDTO);
         return r;

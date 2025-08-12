@@ -18,7 +18,7 @@ import java.util.logging.Logger;
 import retrofit2.Call;
 import retrofit2.Response;
 import retrofit2.Retrofit;
-
+import java.util.List;
 /**
  *
  * @author igor
@@ -34,14 +34,14 @@ public class DohvatanjeKategorijaZaAudioSnimakExample extends Example{
        AudioSnimakRequest audioSnimakRequest = this.retrofit.create(AudioSnimakRequest.class);
 
         int idSni = 1;
-        Call<KategorijeResponse> dohvatiKategorijeCall = audioSnimakRequest.dohvatiMojeKategorije(idSni);
+        Call<List<KategorijaDTO>> dohvatiKategorijeCall = audioSnimakRequest.dohvatiMojeKategorije(idSni);
         
          
         try {
-            Response<KategorijeResponse> response = dohvatiKategorijeCall.execute();
+            Response<List<KategorijaDTO>> response = dohvatiKategorijeCall.execute();
             System.out.println("Status: "+response.code());
-            KategorijeResponse kategorijeResponse = response.body();
-            for(KategorijaDTO k:kategorijeResponse.getKategorije())
+            List<KategorijaDTO> kategorije = response.body();
+            for(KategorijaDTO k:kategorije)
                 System.out.println(k.toXmlString());
             
         } catch (IOException ex) {
@@ -49,6 +49,21 @@ public class DohvatanjeKategorijaZaAudioSnimakExample extends Example{
         } catch (Exception ex) {
             Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
         }
+//        Call<KategorijeResponse> dohvatiKategorijeCall = audioSnimakRequest.dohvatiMojeKategorije(idSni);
+//        
+//         
+//        try {
+//            Response<KategorijeResponse> response = dohvatiKategorijeCall.execute();
+//            System.out.println("Status: "+response.code());
+//            KategorijeResponse kategorijeResponse = response.body();
+//            for(KategorijaDTO k:kategorijeResponse.getKategorije())
+//                System.out.println(k.toXmlString());
+//            
+//        } catch (IOException ex) {
+//            Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
+//        } catch (Exception ex) {
+//            Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
+//        }
     }
     
 }

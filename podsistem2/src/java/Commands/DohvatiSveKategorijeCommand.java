@@ -21,11 +21,13 @@ public class DohvatiSveKategorijeCommand extends Command {
     @Override
     public Return obradiKomandu(Object receivedObject) {
         
+       
         List<Kategorija> sveKategorije = DatabaseHandler.getInstance().dohvatiSveKategorije();
         List<KategorijaDTO> sveKategorijeDTO = new ArrayList<>();
-        for(Kategorija k: sveKategorije){
-            sveKategorijeDTO.add(k.convertToDTO());
-        }
+        if(sveKategorije != null)
+            for(Kategorija k: sveKategorije){
+                sveKategorijeDTO.add(k.convertToDTO());
+            }
         Return r = new Return("dohvatiSveKategorije",sveKategorijeDTO);
         return r;
         

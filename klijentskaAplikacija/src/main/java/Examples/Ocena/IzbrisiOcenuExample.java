@@ -31,10 +31,10 @@ public class IzbrisiOcenuExample extends Examples.Example{
     public void exampleLogic() {
         OcenaRequest ocenaRequest = this.retrofit.create(OcenaRequest.class);
 
-        OcenaDTO ocenaToDelete = new OcenaDTO();
-        ocenaToDelete.idOce = 1;
+        //OcenaDTO ocenaToDelete = new OcenaDTO();
+        int idOce = 1;
         
-        Call<ResponseBody> izbrisiOcenuCall = ocenaRequest.izbrisiOcenu(ocenaToDelete);
+        Call<ResponseBody> izbrisiOcenuCall = ocenaRequest.izbrisiOcenu(idOce);
         
          
         try {

@@ -15,7 +15,7 @@ import java.util.logging.Logger;
 import retrofit2.Call;
 import retrofit2.Response;
 import retrofit2.Retrofit;
-
+import java.util.List;
 /**
  *
  * @author igor
@@ -29,16 +29,15 @@ public class DohvatanjeSvihAudioSnimkaExample extends Examples.Example {
     @Override
     public void exampleLogic() {
        AudioSnimakRequest audioSnimakRequest = this.retrofit.create(AudioSnimakRequest.class);
-
-        
-        Call<AudioSnimciResponse> dohvatiKategorijeCall = audioSnimakRequest.dohvatiSveAudioSnimke();
+       
+        Call<List<AudioSnimakDTO>> dohvatiKategorijeCall = audioSnimakRequest.dohvatiSveAudioSnimke();
         
          
         try {
-            Response<AudioSnimciResponse> response = dohvatiKategorijeCall.execute();
+            Response<List<AudioSnimakDTO>> response = dohvatiKategorijeCall.execute();
             System.out.println("Status: "+response.code());
-            AudioSnimciResponse audioSnimakResponse = response.body();
-            for(AudioSnimakDTO a:audioSnimakResponse.getAudioSnimci())
+            List<AudioSnimakDTO> audioSnimci = response.body();
+            for(AudioSnimakDTO a:audioSnimci)
                 System.out.println(a.toXmlString());
             
         } catch (IOException ex) {
@@ -46,6 +45,22 @@ public class DohvatanjeSvihAudioSnimkaExample extends Examples.Example {
         } catch (Exception ex) {
             Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
         }
+        
+//        Call<AudioSnimciResponse> dohvatiKategorijeCall = audioSnimakRequest.dohvatiSveAudioSnimke();
+//        
+//         
+//        try {
+//            Response<AudioSnimciResponse> response = dohvatiKategorijeCall.execute();
+//            System.out.println("Status: "+response.code());
+//            AudioSnimciResponse audioSnimakResponse = response.body();
+//            for(AudioSnimakDTO a:audioSnimakResponse.getAudioSnimci())
+//                System.out.println(a.toXmlString());
+//            
+//        } catch (IOException ex) {
+//            Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
+//        } catch (Exception ex) {
+//            Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
+//        }
     }
     
 }

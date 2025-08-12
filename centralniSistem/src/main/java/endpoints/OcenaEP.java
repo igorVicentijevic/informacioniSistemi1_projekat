@@ -81,17 +81,22 @@ public class OcenaEP {
         sender.sendRequest(request, podsistem3Q, connFactory);
         ResponseHandler rh = new ResponseHandler();
         
-        return rh.waitForResponseIfNotAdditionalData_NoConsumer(request, podsistem3Q, connFactory);
+        return rh.waitForResponseIfNotAdditionalData_NoConsumer(request, fromPodsistem3Q, connFactory);
     }
     
     @DELETE
-    public Response izbrisiOcenu(OcenaDTO ocenaDTO){
+    @Path("{idO}")
+    public Response izbrisiOcenu(@PathParam("idO") int idO){
+        OcenaDTO ocenaDTO =new OcenaDTO();
+        ocenaDTO.idOce = idO;
+        
         RequestDTO request = new RequestDTO("izbrisiOcenu", ocenaDTO);
         RequestSender sender = new RequestSender();
         sender.sendRequest(request, podsistem3Q, connFactory);
+        
         ResponseHandler rh = new ResponseHandler();
         
-        return rh.waitForResponseIfNotAdditionalData_NoConsumer(request, podsistem3Q, connFactory);
+        return rh.waitForResponseIfNotAdditionalData_NoConsumer(request, fromPodsistem3Q, connFactory);
     }
    
 }

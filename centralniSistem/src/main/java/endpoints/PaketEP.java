@@ -51,7 +51,7 @@ public class PaketEP {
         RequestSender sender = new RequestSender();
         sender.sendRequest(request, podsistem3Q, connFactory);
         
-        return new ResponseHandler().waitForResponseWithAdditionalData(request, fromPodsistem3Q, connFactory);
+        return new <PaketDTO>ResponseHandler().waitForResponseWithAdditionalData(request, fromPodsistem3Q, connFactory);
     }
     @POST
     public Response kreirajPaket(PaketDTO paketDTO){

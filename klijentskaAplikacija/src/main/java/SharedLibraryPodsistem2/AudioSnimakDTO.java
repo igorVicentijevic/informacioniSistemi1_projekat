@@ -5,7 +5,9 @@
  */
 package SharedLibraryPodsistem2;
 
+import JSON.CustomDateDeserializer;
 import SharedLibrary.KorisnikDTO;
+import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import java.io.Serializable;
 import java.io.StringWriter;
 import java.util.Date;
@@ -21,9 +23,9 @@ import javax.xml.bind.annotation.XmlRootElement;
 public class AudioSnimakDTO implements Serializable {
    
     public Integer idSni;
-    
+    @JsonDeserialize(using = CustomDateDeserializer.class)
     public Date vremePostavljanja;
-    
+    @JsonDeserialize(using = CustomDateDeserializer.class)
     public Date trajanje;
     
     public String naziv;

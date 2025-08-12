@@ -18,7 +18,7 @@ import java.util.logging.Logger;
 import retrofit2.Call;
 import retrofit2.Response;
 import retrofit2.Retrofit;
-
+import java.util.List;
 /**
  *
  * @author igor
@@ -34,6 +34,21 @@ public class DohvatiOmiljeneSnimkeExample extends Example {
         KorisnikRequest korisnikRequest = this.retrofit.create(KorisnikRequest.class);
 
         int idK = 1;
+//        Call<List<AudioSnimakDTO>> dohvatiSnimkeCall = korisnikRequest.dohvatiOmiljeneZaKorisnika(idK);
+//        
+//         
+//        try {
+//            Response<List<AudioSnimakDTO>> response = dohvatiSnimkeCall.execute();
+//            System.out.println("Status: "+response.code());
+//            List<AudioSnimakDTO> snimci = response.body();
+//            for(AudioSnimakDTO a:snimci)
+//                System.out.println(a.toXmlString());
+//            
+//        } catch (IOException ex) {
+//            Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
+//        } catch (Exception ex) {
+//            Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
+//        }
         
         Call<AudioSnimciResponse> dohvatiSnimkeCall = korisnikRequest.dohvatiOmiljeneZaKorisnika(idK);
         

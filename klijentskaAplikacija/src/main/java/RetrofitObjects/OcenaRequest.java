@@ -11,26 +11,27 @@ import SharedLibraryPodsistem3.OcenaDTO;
 import SharedLibraryPodsistem3.SlusaDTO;
 import okhttp3.ResponseBody;
 import retrofit2.Call;
+import retrofit2.http.Body;
 import retrofit2.http.DELETE;
 import retrofit2.http.GET;
 import retrofit2.http.POST;
 import retrofit2.http.PUT;
 import retrofit2.http.Path;
-
+import java.util.List;
 /**
  *
  * @author igor
  */
 public interface OcenaRequest {
-    @POST
-    public Call<ResponseBody> dodajOcenu(OcenaDTO ocenaDTO);
+    @POST("ocena")
+    public Call<ResponseBody> dodajOcenu(@Body OcenaDTO ocenaDTO);
     
-    @GET("{idSni}")
-    public Call<OceneResponse> dohvatiSveOceneZaAudioSnimak(@Path("idSni") int idSni);
+    @GET("ocena/{idSni}")
+    public Call<List<OcenaDTO>> dohvatiSveOceneZaAudioSnimak(@Path("idSni") int idSni);
     
-    @PUT
-    public Call<ResponseBody> promeniOcenu(OcenaDTO ocenaDTO);
+    @PUT("ocena")
+    public Call<ResponseBody> promeniOcenu(@Body OcenaDTO ocenaDTO);
     
-    @DELETE
-    public Call<ResponseBody> izbrisiOcenu(OcenaDTO ocenaDTO);
+    @DELETE("ocena/{idO}")
+    public Call<ResponseBody> izbrisiOcenu(@Path("idO") int idO);
 }

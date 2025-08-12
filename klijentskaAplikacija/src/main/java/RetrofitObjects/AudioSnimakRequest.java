@@ -14,6 +14,7 @@ import SharedLibraryPodsistem3.SlusaDTO;
 import java.util.List;
 import okhttp3.ResponseBody;
 import retrofit2.Call;
+import retrofit2.http.Body;
 import retrofit2.http.DELETE;
 import retrofit2.http.GET;
 import retrofit2.http.POST;
@@ -26,33 +27,33 @@ import retrofit2.http.Path;
  */
 public interface AudioSnimakRequest {
     
-    @POST("slusa")
-    public Call<ResponseBody> dodajSlusanje(SlusaDTO slusaDTO);
+    @POST("audioSnimak/slusa")
+    public Call<ResponseBody> dodajSlusanje(@Body SlusaDTO slusaDTO);
   
     
     
-    @GET("slusa/{idSni}")
-    public Call<SlusanjaResponse> dohvatiSvaSlusanjaZaAudioSnimak(@Path("idSni") int idSni);
+    @GET("audioSnimak/slusa/{idSni}")
+    public Call<List<SlusaDTO>> dohvatiSvaSlusanjaZaAudioSnimak(@Path("idSni") int idSni);
     
     
-    @GET
-    public Call<AudioSnimciResponse> dohvatiSveAudioSnimke();
+    @GET("audioSnimak")
+    public Call<List<AudioSnimakDTO>> dohvatiSveAudioSnimke();
     
     
-    @GET("kategorija/{idSni}")
-    public Call<KategorijeResponse> dohvatiMojeKategorije(@Path("idSni") int idSni);
+    @GET("audioSnimak/kategorija/{idSni}")
+    public Call<List<KategorijaDTO>> dohvatiMojeKategorije(@Path("idSni") int idSni);
     
-    @POST
-    public Call<ResponseBody> kreirajAudioSnimak(AudioSnimakDTO audioSnimakDTO);
+    @POST("audioSnimak")
+    public Call<ResponseBody> kreirajAudioSnimak(@Body AudioSnimakDTO audioSnimakDTO);
     
    
-    @PUT("naziv/{idSni}/{noviNaziv}")
+    @PUT("audioSnimak/naziv/{idSni}/{noviNaziv}")
     public Call<ResponseBody> promeniNaziv(@Path("idSni") int idSni,@Path("noviNaziv") String noviNaziv);
     
    
-    @PUT("kategorija/{idSni}/{idKat}")
+    @PUT("audioSnimak/kategorija/{idSni}/{idKat}")
     public Call<ResponseBody> dodajKategoriju(@Path("idSni") int idSni, @Path("idKat") int idKat);
     
-    @DELETE("/{idK}/{idSni}")
+    @DELETE("audioSnimak/{idK}/{idSni}")
     public Call<ResponseBody> izbrisiSnimak(@Path("idK") int idK, @Path("idSni") int idSni);
 }
